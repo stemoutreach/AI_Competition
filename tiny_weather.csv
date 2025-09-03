@@ -1,0 +1,8 @@
+date,city,temp_c,precip_mm,condition
+2025-01-01,Benbrook,9.0,0.0,Clear
+2025-01-02,Benbrook,7.5,1.2,Rain
+2025-01-03,Benbrook,6.0,0.0,Cloudy
+2025-01-04,Benbrook,10.0,3.4,Rain
+2025-01-05,Benbrook,12.0,0.0,Clear
+2025-01-06,Benbrook,11.5,0.0,Clear
+2025-01-07,Benbrook,8.0,0.5,Cloudy
