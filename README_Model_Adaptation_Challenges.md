@@ -1,5 +1,5 @@
 
-# 🧠 AI Quest: Model Adaptation Challenges – Solution Guide
+# 🧠 Model Adaptation Challenges – Solution Guide
 
 This folder contains **solution notebooks** for three hands-on AI challenges designed for high school students. Each challenge builds foundational skills in **AI ethics**, **critical thinking**, **data curation**, and **model adaptation** using Jupyter Notebooks.
 
@@ -39,4 +39,4 @@ These notebooks require:
 
 ---
 
-Designed for **AI Quest** – a half-day competition introducing students to real-world AI applications through ethical, hands-on challenges.
+ 
