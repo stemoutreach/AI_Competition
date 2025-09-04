@@ -69,4 +69,4 @@
 ---
 
 ### Goal
-Students should arrive **AI Quest-ready**: confident in Python basics, data handling, ethics, and teamwork under time constraints.
+Students should arrive **Quest-ready**: confident in Python basics, data handling, ethics, and teamwork under time constraints.
