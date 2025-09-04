@@ -51,7 +51,7 @@
 
 ---
 
-## AI Quest Skills Checklist
+## Skills Checklist
 - [ ] Completed **Algebra II** (or currently enrolled)  
 - [ ] Took **Intro CS/AP CSP** or have **Python + Jupyter** experience  
 - [ ] Completed (or currently in) **Statistics**  
