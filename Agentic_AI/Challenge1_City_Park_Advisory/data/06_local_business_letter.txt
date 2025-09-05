@@ -1,0 +1,2 @@
+Lines 1-5: Nearby café supports expansion if event spaces are limited to daytime.
+Lines 6-10: Suggests wayfinding signage to business district.
