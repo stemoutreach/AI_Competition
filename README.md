@@ -1,146 +1,173 @@
-[
-# AI_Competition — Agentic AI Challenges for High School
 
-**Short, hands‑on AI competition kits (1–3 hours each)** focused on **agentic AI**, **responsible AI ethics**, and **practical software skills**. This repo enables organizers to run a 3–4 hour event where teams tackle one of several challenges, produce clear deliverables, and are evaluated with a transparent rubric.
+# AI_Competition — High‑School AI Mini‑Challenges
+Short, hands‑on **Agentic AI** and **Machine Learning** challenges designed for high‑school teams to complete in **1–3 hours**. Perfect for a 3–4 hour mini‑competition day or in‑class labs.
 
-> Audience: **Students (HS)**, **Organizers/Mentors**, **Judges**  
-> Tech stack: Python 3.10+, basic CLI, optional LLM access with disclosure (see policy)
+- **Agentic AI Track** → small agent systems (plan→act→observe→revise), safe refusals, transparent citations/logs, and one **Test‑Driven Development (TDD)** build.
+- **Machine Learning Track** → notebook‑based modules focused on data literacy, curation & bias, simple baselines, and clear communication.
 
----
-
-## Why this repo
-- **Accessible**: time‑boxed challenges that fit a class period or half‑day event.
-- **Agentic AI**: emphasizes *plan–act–observe–revise* loops, tool use, and safe refusals.
-- **Ethics‑first**: aligned to DoD AI principles (Responsible, Equitable, Traceable, Reliable, Governable).
-- **Real skills**: includes a **Test‑Driven Development (TDD)** challenge to grow software engineering discipline.
+> Internet/LLM use is optional and must be disclosed. All work follows a DoD‑aligned AI Ethics checklist (Responsible, Equitable, Traceable, Reliable, Governable).
 
 ---
 
-## Challenges (pick one per team)
-| ID | Title | Duration | Focus | Primary Deliverables |
+## Contents
+- [Tracks & Folders](#tracks--folders)
+- [Quick Start](#quick-start)
+- [Ethics & LLM Policy](#ethics--llm-policy)
+- [Judging & Scoring](#judging--scoring)
+- [Event Day Flow](#event-day-flow)
+- [Submission Checklist](#submission-checklist)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+
+## Tracks & Folders
+
+### Agentic AI
+**Folder:** [`Agentic_AI/`](./Agentic_AI/README.md)
+
+| ID | Challenge | Duration | Focus | Primary Deliverables |
 |---|---|---:|---|---|
-| C1 | **City Park Advisory** | 1.5–2h | Agent loop over local files; evidence‑based writing | `memo.md`, `decision_checklist.md`, `trace.json` |
-| C2 | **TDD Task Scheduler (Agent‑aware)** | 2–3h | **TDD** + useful planning tool; optional replanning step | Passing tests, `schedule.json`, `TDD_NOTES.md` |
-| C3 | **Civic Helper FAQ Agent** | 1–2h | Retrieval with **citations** and **refusal policy** | `answers.md`, `refusal_policy.md`, `risks.md` |
+| A1 | **[Challenge1_City_Park_Advisory](./Agentic_AI/Challenge1_City_Park_Advisory/)** | 1.5–2h | PAOR agent over local files; evidence‑based memo | `memo.md`, `decision_checklist.md`, `trace.json` |
+| A2 | **[Challenge2_TDD_Scheduler](./Agentic_AI/Challenge2_TDD_Scheduler/)** | 2–3h | **TDD** + useful day scheduler; optional agentic replanning | Passing tests, `schedule.json`, `TDD_NOTES.md` |
+| A3 | **[Challenge3_Civic_FAQ_Agent](./Agentic_AI/Challenge3_Civic_FAQ_Agent/)** | 1–2h | Retrieval Q&A with **verbatim citations** & **refusal policy** | `answers.md`, `refusal_policy.md`, `risks.md` |
 
-> Each challenge has its own README, starter code/data, and clear outcomes.
+See the track landing page: [`Agentic_AI/README.md`](./Agentic_AI/README.md).
 
-### Repository Structure (recommended)
+---
+
+### Machine Learning
+**Folder:** [`Machine_Learning/`](./Machine_Learning/README.md)
+
+**Notebooks included:**
+- [`Machine_Learning/Getting_Started_DS101_Intro_Notebook.ipynb`](./Machine_Learning/Getting_Started_DS101_Intro_Notebook.ipynb) — Jupyter basics, CSVs, simple charts.
+- [`Machine_Learning/Bias_Buster_Challenge_Solution.ipynb`](./Machine_Learning/Bias_Buster_Challenge_Solution.ipynb) — Data curation, imbalance, bias notes.
+- [`Machine_Learning/Sentiment_Switch_Challenge_Solution.ipynb`](./Machine_Learning/Sentiment_Switch_Challenge_Solution.ipynb) — Lightweight text classification workflow.
+- [`Machine_Learning/Emotion_Translator_Challenge_Solution.ipynb`](./Machine_Learning/Emotion_Translator_Challenge_Solution.ipynb) — Simple NLP feature engineering & evaluation.
+
+See the track landing page: [`Machine_Learning/README.md`](./Machine_Learning/README.md).
+
+---
+
+## Quick Start
+
+> **Python 3.10+** recommended.
+
+### Agentic AI (examples)
+```bash
+# A1 — City Park Advisory
+cd Agentic_AI/Challenge1_City_Park_Advisory
+python3 main.py   # creates trace.json
+# Then write memo.md and decision_checklist.md using cited evidence
+
+# A2 — TDD Scheduler
+cd Agentic_AI/Challenge2_TDD_Scheduler
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+pytest -q  # expect FAIL first (RED) → implement → pass (GREEN) → refactor
+python cli.py data/sample_tasks.csv  # creates schedule.json
+
+# A3 — Civic FAQ Agent
+cd Agentic_AI/Challenge3_Civic_FAQ_Agent
+python3 app.py
 ```
-AI_Competition/
-├─ challenges/
-│  ├─ challenge1_city_park_advisory/
-│  ├─ challenge2_tdd_scheduler/
-│  └─ challenge3_civic_faq_agent/
-├─ universal/
-│  ├─ judge_score_sheet.md
-│  └─ submission_checklist.md
-├─ docs/
-│  └─ Agentic_AI_Mini_Challenges.md   # overview & organizer notes (optional)
-└─ README.md
+
+### Machine Learning (examples)
+```bash
+cd Machine_Learning
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt  # if present
+jupyter notebook  # or jupyter lab
+# open any of the notebooks listed above and follow the cells
 ```
-> Adjust paths if your folder names differ. Keep challenge folders self‑contained (data, tools, app/tests).
+
+**Deliverables (all entries)**
+- Required files listed in the specific challenge/track README
+- A short **README** with run steps & assumptions
+- **Ethics checklist** (see below)
+- If LLMs used: `prompts.md` with exact prompts and a note on edited outputs
 
 ---
 
-## Ethics & Safety (DoD‑aligned)
-All teams must include an **Ethics Checklist** in their submission. Judges verify that work is:
-- **Responsible** — limits are stated; uncertainties and assumptions are called out.
-- **Equitable** — considers diverse users; avoids stigmatizing or exclusionary language.
-- **Traceable** — key claims are tied to citations, tests, or logs; prompts are disclosed.
-- **Reliable** — outputs are consistent/deterministic where applicable; edge cases considered.
-- **Governable** — includes stop/rollback criteria and safe‑fail behavior (e.g., refuse/redirect).
+## Ethics & LLM Policy
 
-**LLM Usage Policy**
-- Allowed to use LLMs for brainstorming and code/text generation **only if** you include `prompts.md` with the exact prompts and note where you **edited** outputs.
-- **No web scraping** or external datasets unless explicitly provided by organizers.
-- Cite all sources used (even if AI‑assisted).
+### DoD‑Aligned Ethics
+All submissions should demonstrate:
+- **Responsible** — State assumptions & uncertainties; avoid unsupported claims.
+- **Equitable** — Consider diverse users; inclusive language; note fairness impacts.
+- **Traceable** — Use citations (file+lines), tests/logs, or run traces; disclose prompts.
+- **Reliable** — Deterministic where possible; handle edge cases; note limits.
+- **Governable** — Provide safe‑fail behavior (refuse/redirect) and rollback/stop criteria.
 
----
-
-## Quick Start (Students)
-1. **Pick your challenge** in `/challenges/*` and read its README.  
-2. **Set up Python** (3.10+ recommended):  
-   ```bash
-   python3 -m venv .venv && source .venv/bin/activate
-   pip install -r requirements.txt  # if provided
-   ```
-3. **Build & run** according to the challenge README. Common patterns:
-   - C1: `python3 main.py` → produces `trace.json` → write `memo.md` & `decision_checklist.md`
-   - C2: `pytest -q` (RED) → implement → `pytest -q` (GREEN) → refactor → `python cli.py data/sample_tasks.csv`
-   - C3: `python3 app.py` → ask questions in terminal → compile `answers.md` with citations
-
-**Deliverables (all challenges)**
-- A small **README** (how to run + assumptions)
-- Required files listed in the challenge (see table above)
-- **Ethics Checklist** (filled)
-- If LLMs used: `prompts.md` with notes on any edits
-
----
-
-## Event Day Flow (3–4 hours)
-1. **Kickoff (10–15 min)**: Rules, ethics, deliverables, scoring.  
-2. **Work time (90–140 min)**: Teams build and document.  
-3. **Submission (10–15 min)**: Zip or push to repo following the **submission checklist**.  
-4. **Judging (30–60 min, parallel)**: Use sheet below; confirm ethics & traceability.  
-5. **Demos & Awards (15–30 min)**: 2‑minute pitches + judge Q&A.
-
-**Submission Checklist** (see `/universal/submission_checklist.md`)
-- Required files present and named correctly
-- Repro steps work with provided data
-- Ethics checklist complete
-- `prompts.md` included if LLMs used
+### LLM Usage Policy
+- LLMs may be used for brainstorming or generation **only if** you include `prompts.md` and clearly mark any edited outputs.
+- **No web scraping** or external datasets unless the folder’s README explicitly allows it.
+- Cite any sources used.
 
 ---
 
 ## Judging & Scoring
-Use the standard 100‑point rubric (see `/universal/judge_score_sheet.md`).
+
+Standard **100‑point** rubric:
 
 | Category | Points | What judges look for |
 |---|---:|---|
-| Correctness / Accuracy | 25 | Output matches task & data; reasoning sound |
-| Traceability (citations/tests/logs) | 20 | Evidence links; tests or logs; transparent prompts |
+| Correctness / Accuracy | 25 | Output matches task & data; reasoning is sound |
+| Traceability (citations/tests/logs) | 20 | Evidence links; tests/logs; transparent prompts |
 | Safety & Ethics | 20 | DoD alignment; refusals/rollback; bias mitigation |
-| Tool Use / TDD Discipline | 15 | Purposeful tool use; TDD steps for C2 |
+| Tool Use / TDD Discipline | 15 | Purposeful tool use; **TDD** steps for A2 |
 | Usefulness & Clarity | 20 | Clear writing/UI; actionable outputs |
 | **Total** | **100** |  |
 
-**Tie‑breakers**: (1) stronger ethics; (2) better traceability; (3) higher human usefulness.
+**Tie‑breakers:** (1) stronger ethics; (2) better traceability; (3) higher human usefulness.
 
 ---
 
-## Organizer Guide
-- Print or package each challenge’s **Info Pack** / dataset.  
-- Provide **starter folders** to teams (minimal, commented).  
-- Clarify Internet/LLM policy and submission method.  
-- Recruit enough judges to score in parallel (2 per room is ideal).  
-- Prepare a timing bell or slide with checkpoints (start / 60m / 30m / 10m / stop).
+## Event Day Flow (3–4 hours suggested)
+1. **Kickoff (10–15 min)**: rules, ethics, deliverables, scoring.  
+2. **Work time (90–140 min)**: teams build and document.  
+3. **Submission (10–15 min)**: zip or push following the track’s checklist.  
+4. **Judging (30–60 min, parallel)**: apply rubric; verify ethics & traceability.  
+5. **Demos & Awards (15–30 min)**: 2‑minute pitches + Q&A.
 
-**Hardware/Software**
-- Student laptops with Python 3.10+
-- Optional: offline LLM access or none (competition works without it)
-- Editors: VS Code/IDEs allowed
+---
+
+## Submission Checklist
+- Required files present and named correctly  
+- Repro steps work with provided data  
+- Ethics checklist complete  
+- `prompts.md` included if LLMs used
 
 ---
 
 ## Contributing
-Pull requests are welcome! Please open an issue first to discuss scope. For major changes:
-1. Propose a challenge outline (brief, outcomes, deliverables, rubric, ethics).  
-2. Provide **starter code/data** and a 1–page README for the challenge.  
-3. Add/update tests where applicable (especially for TDD‑style challenges).
+PRs welcome! To add a new challenge/module:
+1. Propose a brief (goals, outcomes, deliverables, rubric, ethics).  
+2. Include **starter code/data** and a one‑page `README.md`.  
+3. Add tests where applicable (especially TDD‑style challenges).
 
-**Code of Conduct**: Be kind, constructive, and inclusive. We actively encourage contributions that improve accessibility and equity.
+**Code of Conduct:** Be kind, constructive, inclusive.
 
 ---
 
 ## License
-TBD by repo owner (e.g., MIT/Apache‑2.0/CC‑BY‑SA for docs). Add your choice in `LICENSE` and mention it here.
+TBD by repo owner (MIT/Apache‑2.0/CC‑BY‑SA, etc.). Add a `LICENSE` file and reference it here.
 
 ---
 
-## Acknowledgments
-- Community educators and students who piloted early versions of these exercises.  
-- Industry guidance on agentic systems and model interoperability; and public‑sector conversations on AI ethics that inspire the DoD‑aligned checklist.
-
-> Questions or ideas? Open an issue or start a discussion in this repo.
-](https://github.com/stemoutreach/AI_Competition/blob/main/README.md)
+### Repo Map (for reference)
+```
+AI_Competition/
+├─ README.md  ← (this file)
+├─ Agentic_AI/
+│  ├─ Challenge1_City_Park_Advisory/
+│  ├─ Challenge2_TDD_Scheduler/
+│  ├─ Challenge3_Civic_FAQ_Agent/
+│  └─ README.md
+└─ Machine_Learning/
+   ├─ Bias_Buster_Challenge_Solution.ipynb
+   ├─ Emotion_Translator_Challenge_Solution.ipynb
+   ├─ Getting_Started_DS101_Intro_Notebook.ipynb
+   ├─ Sentiment_Switch_Challenge_Solution.ipynb
+   └─ README.md
+```
