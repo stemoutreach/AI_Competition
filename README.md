@@ -1,4 +1,4 @@
-
+[
 # AI_Competition — Agentic AI Challenges for High School
 
 **Short, hands‑on AI competition kits (1–3 hours each)** focused on **agentic AI**, **responsible AI ethics**, and **practical software skills**. This repo enables organizers to run a 3–4 hour event where teams tackle one of several challenges, produce clear deliverables, and are evaluated with a transparent rubric.
@@ -143,3 +143,4 @@ TBD by repo owner (e.g., MIT/Apache‑2.0/CC‑BY‑SA for docs). Add your choic
 - Industry guidance on agentic systems and model interoperability; and public‑sector conversations on AI ethics that inspire the DoD‑aligned checklist.
 
 > Questions or ideas? Open an issue or start a discussion in this repo.
+](https://github.com/stemoutreach/AI_Competition/blob/main/README.md)
