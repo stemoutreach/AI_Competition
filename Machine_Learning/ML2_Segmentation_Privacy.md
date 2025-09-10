@@ -1,5 +1,5 @@
 
-# AI Quest — ML Model Development Problem 2  
+# ML Model Development Problem 2  
 **Title:** Segments & Sensitivity: Clustering with a Privacy Twist (Unsupervised)
 
 ## Scenario
