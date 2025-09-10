@@ -1,5 +1,5 @@
 
-# AI Quest — ML Model Development Problem 1  
+# ML Model Development Problem 1  
 **Title:** Bias Buster: Fair Loan Approval Classifier (Supervised Learning)
 
 ## Scenario
